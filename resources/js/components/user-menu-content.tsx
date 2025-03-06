@@ -3,6 +3,7 @@ import { UserInfo } from '@/components/user-info';
 import { useMobileNavigation } from '@/hooks/use-mobile-navigation';
 import { type User } from '@/types';
 import { Link } from '@inertiajs/react';
+import { useLaravelReactI18n } from 'laravel-react-i18n';
 import { LogOut, Settings } from 'lucide-react';
 
 interface UserMenuContentProps {
@@ -10,6 +11,7 @@ interface UserMenuContentProps {
 }
 
 export function UserMenuContent({ user }: UserMenuContentProps) {
+  const { t } = useLaravelReactI18n();
   const cleanup = useMobileNavigation();
 
   return (
@@ -24,7 +26,7 @@ export function UserMenuContent({ user }: UserMenuContentProps) {
         <DropdownMenuItem asChild>
           <Link className="block w-full" href={route('profile.edit')} as="button" prefetch onClick={cleanup}>
             <Settings className="mr-2" />
-            Settings
+            {t('Settings')}
           </Link>
         </DropdownMenuItem>
       </DropdownMenuGroup>
@@ -32,7 +34,7 @@ export function UserMenuContent({ user }: UserMenuContentProps) {
       <DropdownMenuItem asChild>
         <Link className="block w-full" method="post" href={route('logout')} as="button" onClick={cleanup}>
           <LogOut className="mr-2" />
-          Log out
+          {t('Log out')}
         </Link>
       </DropdownMenuItem>
     </>
