@@ -13,17 +13,17 @@ export default function SettingsLayout({ children }: PropsWithChildren) {
   const sidebarNavItems: NavItem[] = [
     {
       title: t('Profile'),
-      url: '/settings/profile',
+      href: '/settings/profile',
       icon: null,
     },
     {
       title: t('Password'),
-      url: '/settings/password',
+      href: '/settings/password',
       icon: null,
     },
     {
       title: t('Appearance'),
-      url: '/settings/appearance',
+      href: '/settings/appearance',
       icon: null,
     },
   ];
@@ -43,15 +43,15 @@ export default function SettingsLayout({ children }: PropsWithChildren) {
           <nav className="flex flex-col space-y-1 space-x-0">
             {sidebarNavItems.map((item) => (
               <Button
-                key={item.url}
+                key={item.href}
                 size="sm"
                 variant="ghost"
                 asChild
                 className={cn('w-full justify-start', {
-                  'bg-muted': currentPath === item.url,
+                  'bg-muted': currentPath === item.href,
                 })}
               >
-                <Link href={item.url} prefetch>
+                <Link href={item.href} prefetch>
                   {item.title}
                 </Link>
               </Button>
