@@ -295,6 +295,7 @@
   "Web Server is Down": "Webサーバーが停止中",
   "Whoops!": "おっと！",
   "Yes": "はい。",
+  "You are now logged in.": "ログインしました。",
   "You are receiving this email because we received a password reset request for your account.": "このメールは、アカウントのパスワードリセットリクエストを受けたため送信されました。",
   "Your email address is unverified.": "あなたのメールアドレスは未確認です。"
 }
